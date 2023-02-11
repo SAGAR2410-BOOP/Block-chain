@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<style>	
+	.column {
+	  float: left;
+	  width: 30%;
+	  padding: 5px;
+	}
+	img {
+	  width: 100%;
+	  display: flex;
+
+	}	
+</style>
+</head>  
+<body>
+    <h2> All NFT</h2>
+	<div class="container slds-size_1-of-3">
+	   <div class="column">
+	     <img src="https://hexanft.hexaview.in/" alt="image">
+       </div>
+	</div>
+</body>
+</html>

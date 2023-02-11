@@ -1,0 +1,78 @@
+<template>
+   <lightning-card variant="Narrow" title="NFT" icon-name="standard:account">
+      <br/>
+        
+
+
+      <!-- <img src={tokenURI} height="350" width="350" alt="NFT List"/><br> -->
+      
+      <!-- <b>tokenId</b>: {result.tokenId}<br>
+      <b>price</b>: {result.price}<br>
+      <b>tokenURI</b>:{result.tokenURI}<br> --> 
+      <template if:true={imageReady}>
+         <lightning-card title="All NFt" icon-name="custom:custom11">
+            <lightning-layout multiple-rows="false" multiple-colums="true">
+               <lightning-layout-item class="slds-p-around_xx-small" size="12">
+                  <lightning-layout>
+                     <lightning-layout-item class="slds-p-around_xx-small" size='12'>
+                        <div>
+                           <lightning-layout class='casedt'>
+                              <template for:each={res} for:item="item">
+                                 <lightning-layout-item size="2" class="slds-m-around_x-small slds-border_top slds-border_left slds-border_bottom slds-border_right" key={item.id} >
+                                    <lightning-tile class='imgBox' type="media" variant="Narrow">
+                                       <img class='slds-m-top_small' src={item.image} height='200px' width='200px'></img><br key={item.tokenId}>
+                                       <b key={item.tokenId}>tokenId</b>: {item.tokenId}<br key={item.tokenId}>
+                                       <b key={item.tokenId}>price</b>: {item.price}<br key={item.tokenId}>
+                                       
+                                       <b key={item.tokenId}>name</b>:{item.name}<br key={item.tokenId}>
+                                       <b key={item.tokenId}>Description</b>:{item.description}
+                                    </lightning-tile>
+                                 </lightning-layout-item>
+                              </template>
+                           </lightning-layout>
+                        </div>
+                     </lightning-layout-item>
+                  </lightning-layout>
+               </lightning-layout-item>
+            </lightning-layout>
+         </lightning-card> 
+      
+
+
+            <!-- <template for:each={res} for:item="nft" for:index="index">
+               
+                  <img key={nft.tokenId} src={nft.image} height="200" width="200" alt="NFT List"/>
+                  <b key={nft.tokenId}>tokenId</b>: {nft.tokenId}
+                  <b key={nft.tokenId}>price</b>: {nft.price}
+                  <b key={nft.tokenId}>Seller</b>:{nft.seller}
+                  <b key={nft.tokenId}>name</b>:{nft.name}
+                  <b key={nft.tokenId}>Description</b>:{nft.description}
+               
+                <template if:true={nft.isLineBreak}>
+                     <br key={nft.tokenId}>
+                </template>
+             </template> -->
+
+
+            <!-- <template for:each={res} for:item="nft" for:index="index">
+                <img class='temp' key={nft.tokenId} src={nft.image} height="200" width="200" alt="NFT List"/>
+                <br key={nft.tokenId}>
+                <b key={nft.tokenId}>tokenId</b>: {nft.tokenId}<br key={nft.tokenId}>
+                <b key={nft.tokenId}>price</b>: {nft.price}<br key={nft.tokenId}>
+                
+                <b key={nft.tokenId}>Seller</b>:{nft.seller}<br key={nft.tokenId}>
+                <b key={nft.tokenId}>name</b>:{nft.name}<br key={nft.tokenId}>
+                <b key={nft.tokenId}>Description</b>:{nft.description}<br key={nft.tokenId}>
+                <h1 key={nft.tokenId}> {nft.name} </h1>
+             </template> -->
+      </template>
+        
+      <template if:true={loadingSpinner}>
+         <lightning-spinner size="Large" alternative-text="Loading....">
+               
+         </lightning-spinner>
+      </template>
+   </lightning-card>
+
+
+</template>

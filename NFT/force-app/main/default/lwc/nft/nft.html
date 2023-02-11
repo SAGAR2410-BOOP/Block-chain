@@ -1,0 +1,25 @@
+<template>
+    <lightning-card variant="Narrow" title="NFT" icon-name="standard:account">
+        <lightning-button variant="success" label="Generate NFT List" title="title name" onclick={handleclick}></lightning-button>
+        <br/>
+        <template if:true={imageReady}>
+            <img src={pictureUrl} height="350" width="350" alt="NFT List"/><br> -->
+        
+        <b>name</b>: {nft1.name}<br>
+        <b>price</b>: {nft1.price}<br>
+        <b>description</b>:{nft1.description}<br>
+        -->
+        <template for:each={nft} for:item="nft">
+            <img key={nft.url} src={nft.url} height="350" width="350" alt="NFT List"/><br key={nft.url}>
+            <b key={nft.url}>name</b>: {nft.name}<br key={nft.url}>
+            <b key={nft.url}>price</b>: {nft.price}<br key={nft.url} >
+            <b key={nft.url}>description</b>:{nft.description}<br key={nft.url}>
+        </template>
+    </template>
+        <template if:true={loadingSpinner}>
+            <lightning-spinner size="Large" alternative-text="Loading....">
+                
+            </lightning-spinner>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,55 @@
+<template>
+    <div class="slds-p-around_medium lgc-bg">
+        <lightning-input type="text" label="User Address" onchange={setUserAddress} placeholder="text here..">
+
+        </lightning-input>
+
+    </div>
+    
+    <div>
+        <lightning-button variant="brand" label="Search" title="Search" onclick={handleclickToGetAddress}>
+            
+        </lightning-button>
+    </div>
+    <template if:true={Search}>
+        User Address : {Useraddress}
+    </template>
+    <lightning-card variant="Narrow" title="Listed NFT" icon-name="standard:account">
+        
+
+
+       <!-- <img src={tokenURI} height="350" width="350" alt="NFT List"/><br> -->
+        
+        <!-- <b>tokenId</b>: {result.tokenId}<br>
+        <b>price</b>: {result.price}<br>
+        <b>tokenURI</b>:{result.tokenURI}<br> --> 
+        
+        <template if:true={loadingSpinner}>
+            <lightning-spinner size="Large" alternative-text="Loading....">
+                
+            </lightning-spinner>
+        </template>
+        <template if:false={loadingSpinner}>
+            <template if:true={imageReady}>
+                <template for:each={res} for:item="nft">
+                    <img key={nft.tokenId} src={nft.image} height="350" width="350" alt="NFT List"/>
+                    <br key={nft.tokenId}>
+                    <b key={nft.tokenId}>tokenId</b>: {nft.tokenId}<br key={nft.tokenId}>
+                    <b key={nft.tokenId}>price</b>: {nft.price}<br key={nft.tokenId} >
+                    
+                    <b key={nft.tokenId}>Seller</b>:{nft.seller}<br key={nft.tokenId}>
+                    <b key={nft.tokenId}>name</b>:{nft.name}<br key={nft.tokenId}>
+                    <b key={nft.tokenId}>Description</b>:{nft.description}<br key={nft.tokenId}>
+                    
+                    
+                    <!-- <h1 key={nft.tokenId}> {nft.name} </h1> -->
+                </template>
+            </template>
+        </template>
+    </lightning-card>
+</template>
+
+
+
+
+
